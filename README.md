@@ -9,7 +9,7 @@ Copyright 2011-2014 [James George](http://www.jamesgeorge.org) co-developed by [
 
 Licensed under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0)
 
-## Philosophy of Reusable Tools##
+## Philosophy of Reusable Tools
 
 ofxTimeline is part of my reserach into how creating GUI based tools within creative coding environments can open up new ways of creating and interacting with media.
 
@@ -36,8 +36,6 @@ https://vimeo.com/59653952
 
 
 ## Anatomy of ofxTimeline
-![Anatomy](http://www.jamesgeorge.org/images/ofxtimeline/github/AnatomyOfTimeline.jpg)
-
 ### 1 Pages 
 
 You can divide the timeline into pages, each page containing its own set of tracks.

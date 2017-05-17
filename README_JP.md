@@ -9,7 +9,7 @@ Copyright 2011-2012 [James George](http://www.jamesgeorge.org) Co-developed by [
 
 Licensed under the Apache License
 
-## 再利用可能なツールの哲学##
+## 再利用可能なツールの哲学
 
 ofxTimelineの開発は、クリエイティブコーディングの環境の中で、どのようにGUIベースのツールを作り、メディアを使って創造しインタラクションする新しい方法を切り開く事が出来るか、に対するリサーチの一環として制作されています。
 
@@ -39,8 +39,6 @@ https://vimeo.com/59653952
 
 
 ## ofxTimelineの構造
-![Anatomy](http://www.jamesgeorge.org/images/ofxtimeline/github/AnatomyOfTimeline.jpg)
-
 ### 1 ページ
 
 タイムラインをページごとに分ける事が出来ます。それぞれのページには、それぞれ別々のトラックのセットが入っています。
