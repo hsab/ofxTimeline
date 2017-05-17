@@ -30,8 +30,6 @@
  *
  */
 
-#ifdef TIMELINE_AUDIO_INCLUDED
-
 #include "ofxTLAudioTrack.h"
 #include "ofxTimeline.h"
 
@@ -476,5 +474,3 @@ void ofxTLAudioTrack::generateEnvelope(int size){
 string ofxTLAudioTrack::getTrackType(){
     return "Audio";    
 }
-
-#endif  // TIMELINE_AUDIO_INCLUDED

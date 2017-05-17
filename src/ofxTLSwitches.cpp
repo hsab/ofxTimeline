@@ -530,6 +530,7 @@ void ofxTLSwitches::keyPressed(ofKeyEventArgs& args){
             timeline->dismissedModalContent();
             timeline->flagTrackModified(this);
         }
+		clickedTextField->textField.keyPressed(args); // <-- Line I added to pass the key
     } else {
         ofxTLKeyframes::keyPressed(args);
     }

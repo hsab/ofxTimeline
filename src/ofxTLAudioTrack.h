@@ -32,8 +32,6 @@
 
 #pragma once
 
-#ifdef TIMELINE_AUDIO_INCLUDED
-
 #include "ofMain.h"
 #include "ofxTLTrack.h"
 #include "ofOpenALSoundPlayer_TimelineAdditions.h"
@@ -129,5 +127,4 @@ class ofxTLAudioTrack : public ofxTLTrack
     vector<float> envelope;
 };
 
-#endif  // TIMELINE_AUDIO_INCLUDED
 

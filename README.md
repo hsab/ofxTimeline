@@ -1,6 +1,4 @@
 # ofxTimeline #
-![Timeline](http://www.jamesgeorge.org/images/ofxtimeline/github/Header.png)
-
 ofxTimeline is a simple to use openFrameworks add on for creating a user interface to an editable timeline. The framework allows you to compose sequences of change over time, controlling the variables in your openFrameworks application to create time based interactions.
 
 If you're familiar with timelines from programs like After Effects, Final Cut, or Blender then ofxTimeline should feel comfortable. With just a few lines of code you can add a visual editor to smoothly interpolate curves, colors, video, oscillators, audio, and 3d cameras. 
@@ -64,19 +62,15 @@ The control at the bottom of the track allows for zooming in and precisely editi
 
 ### Simple Curves
 Simple Curves shows how to use two keyframes and a switcher to animate and color a cube
-![SimpleTween](http://www.jamesgeorge.org/images/ofxtimeline/github/example-simpleTween.png)
 
 ### Audio Waveform
 Audio Waveform shows how to add an audio track to a project.
-![AudioWaveform](http://www.jamesgeorge.org/images/ofxtimeline/github/example-audioWaveform.png)
 
 ### Video Renderer
 Video Renderer shows how to build a simple video effects app using the timeline and a shader. Drag & Drop a video into the application, edit and export the modified frames as an image sequence
-![VideoRenderer](http://www.jamesgeorge.org/images/ofxtimeline/github/example-videoRenderer.png)
 
 ### Multi-timeline
 Muli-timeline shows how to use Flags to trigger start and stop the playback of other timelines in the same application.
-![MultiTimeline](http://www.jamesgeorge.org/images/ofxtimeline/github/example-multiTimeline.png)
 
 ## Hotkeys
 
@@ -217,8 +211,6 @@ in your draw or update function, read the value
 ofxTimeline has several built in track types for doing standard timeline tasks. 
 
 ### Bangs
-![Bangs](http://www.jamesgeorge.org/images/ofxtimeline/github/BangTrack.png)
-
 A bang is a simple time marker that sends an event when the playhead passes it. To use a bang track you need a class that listens to bang events, like so:
 
 MyClass.h
@@ -247,8 +239,6 @@ MyClass.cpp
     Inheritance: ofxTLTrack -> ofxTLKeyframes -> ofxTLBangs
 
 ### Curves ###
-![Curves](http://www.jamesgeorge.org/images/ofxtimeline/github/CurvesTrack.png)
-
 Curves change a value between a min and max range smoothly over time, edited with keyframes that have interpolation.
 
 Right clicking a keyframe on the timeline brings up a selection window to change the interpolation value. These are based on the Penner equations found in [ofxCurves](https://github.com/arturoc/ofxTween)
@@ -256,8 +246,6 @@ Right clicking a keyframe on the timeline brings up a selection window to change
     Inheritance: ofxTLTrack -> ofxTLKeyframes -> ofxTLCurves
 
 ### Flags ###
-![Flags](http://www.jamesgeorge.org/images/ofxtimeline/github/FlagTrack.png)
-
 Flags are like Bangs but allow the user to enter text on each flag. The value can be read in the event
 
     //--------------------------------------------------------------
@@ -270,15 +258,11 @@ Flags are like Bangs but allow the user to enter text on each flag. The value ca
     Inheritance: ofxTLTrack -> ofxTLKeyframes -> ofxTLBangs -> ofxTLFlags
 
 ### Switches ###
-![Switches](http://www.jamesgeorge.org/images/ofxtimeline/github/SwitchTrack.png)
-
 Switches provide a simple control to turn regions of the timeline on and off.
 
     Inheritance: ofxTLTrack -> ofxTLBangs -> ofxTLSwitches
 
 ### VideoTrack ###
-![VideoTrack](http://www.jamesgeorge.org/images/ofxtimeline/github/VideoTrack.png)
-
 VideoTracks let a user interactively scrub through a video and sequence effects in time with the playback. When a video track is added the video playback will control the playback of the entire timeline. 
 
     ofxTLVideoTrack* videoTrack = timeline.addVideoTrack("Video", videoPath);
@@ -293,8 +277,6 @@ VideoTracks let a user interactively scrub through a video and sequence effects 
 
 
 ### AudioTrack ###
-![AudioTrack](http://www.jamesgeorge.org/images/ofxtimeline/github/AudioTrack.png)
-
 AudioTracks let a user interactively scrub through an audio track and sequence effects in time.
 
 In your .cpp file add the track and load a file
@@ -323,49 +305,31 @@ In your .cpp file add the track and load a file
 
 
 ### ColorTrack
-![ColorTrack](http://www.jamesgeorge.org/images/ofxtimeline/github/ColorTrack.png)
-
 The color track let's you sequence smoothly changing colors. It uses a provided image as a sample palette, each keyframe specifies a position on the palette to sample from. Between keyframes the image is traverse to create smoothly changing colors.
 
 ### LFO (experimental)
-![LFO](http://www.jamesgeorge.org/images/ofxtimeline/github/LFOTrack.png)
-
 The LFO, Low Frequency Oscillator, track defines simple repeating sine waves and noise functions. 
 
 ## 3rd Party Custom Tracks ##
 
 ofxTimeline can be integrated with other addons or time based media, below are examples of just a few
 
-### DepthImageSequence ###
-
-https://github.com/obviousjim/ofxRGBDepth // [RGBDToolkit](http://wwww.rgbdtoolkit.com)
-
 ### MidiTrack ###
-
 https://github.com/momo-the-monster/ofxTimelineTracks // [ofxTLMidiNote](https://vimeo.com/46793363)
 
 ## Designing custom Tracks ##
-
 The track system is designed to be extensible. There are two empty track templates that are the best place to get started building your own track
 
 ### ofxTLEmptyTrack
-
 Use this template as a starting point for visualizing time based data in ofxTimeline or creating a unique type of interactive track.
 
 ### ofxTLEmptyKeyframes
 Use this template for creating a custom keyframe based track. It already has copy+paste, multiple selection, saving and loading.
 
 ## Supported By ##
-
 ofxTimeline is a project by [James George](http://www.jamesgeorge.org), co-developed by [YCAMInterLab](http://interlab.ycam.jp/en/) during the [Guest Research Project v.2](http://interlab.ycam.jp/en/projects/guestresearch/vol2)
 
-<p align="center">
-    <img src="http://www.jamesgeorge.org/images/ofxtimeline/github/logo_ycam.png" />
-</p>
-
 ### Additional support  ###
-
-![Additional Support](http://www.jamesgeorge.org/images/ofxtimeline/github/SupportedBy.png)
 
 [Playmodes](http://www.playmodes.com/) who graciously funded and shaped the project in it's early stages for [BlueBeams](https://vimeo.com/35931265) .
 
