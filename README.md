@@ -1,3 +1,38 @@
+This is a fork of [ofxTimeline](https://github.com/YCAMInterlab/ofxTimeline) without any dependency on [ofxAudioDecoder](https://github.com/kylemcdonald/ofxAudioDecoder). As a result there is no support for `mp3` files.
+I spent hours trying to get `ofxAudioDecoder` to compile properly, however the provided example did not behave as expected once no errors where thrown. Furthermore upon inspection of `ofOpenALSoundPlayer_TimelineAdditions`, the only instance of `ofxAudioDecoder` is found in `decoderReadFile` function which is only called when the file format is `mp3`. 
+I've been successfully able to compile the *allTracks* example on Windows 10 using VS2015. 
+
+## Changes:
+
+ - Removed `ofxAudioDecoder` dependency.
+ - Cleaned up `ofOpenALSoundPlayer_TimelineAdditions` class by removing unused methods and code. 
+ - Updated [OpenAL](https://openal.org/downloads/) `libs` and `dlls` to latest version 1.1.
+ - Fixed `switch` and `flag` tracks' text input field as suggested [here](https://github.com/YCAMInterlab/ofxTimeline/issues/135#issuecomment-247581860).
+
+
+## Installation:
+You need the following dependencies:
+
+- [ofxMSATimer](https://github.com/obviousjim/ofxMSATimer)
+- [ofxRange](https://github.com/Flightphase/ofxRange)
+- [ofxTextInputField](https://github.com/elliotwoods/ofxTextInputField)
+- [ofxTimecode](https://github.com/YCAMInterlab/ofxTimecode)
+- [ofxTween](https://github.com/obviousjim/ofxTween)
+- [ofxXmlSettings](http://openframeworks.cc/documentation/ofxXmlSettings/ofxXmlSettings/)
+
+On Windows:
+
+- Make sure that you are using [K-Lite Codec Pack 12.1.0 Full ~ 33.9 MB ~ April 18th 2016](http://filehippo.com/download_klite_codec_pack/67445/) for video compatibility as suggested [here](https://github.com/openframeworks/openFrameworks/issues/5114#issuecomment-227208136). 
+- Copy the the appropriate architecture dependent dlls from `dll` folder to you app's `bin` folder.
+
+For all platforms:
+ - Copy `GUI` folder to your app's `bin/data` folder.
+
+## Examples:
+All examples have been updated for Windows using VS2015. However creating a new project, adding the dependencies and replacing the `ofApp.cpp` and `ofApp.h` files with those from the examples should suffice for a successful compilation on any platform. 
+
+Unfortunately I have not tested this fork on Linux or Mac. Feedback and issue reports will be highly appreciated. 
+
 # ofxTimeline #
 ofxTimeline is a simple to use openFrameworks add on for creating a user interface to an editable timeline. The framework allows you to compose sequences of change over time, controlling the variables in your openFrameworks application to create time based interactions.
 
