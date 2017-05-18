@@ -185,7 +185,7 @@ Follow this link [http://connect.creativelabs.com/openal/Downloads/Forms/AllItem
 
 ### Create a new ofxTimeline project
 
- - Open the ProjectGenerator in of_0073_osx_release/projectGenerator/
+ - Open the ProjectGenerator
  - Give the project a name
  - Under the addons tab select the following addons
       - ofxTimeline
@@ -194,14 +194,7 @@ Follow this link [http://connect.creativelabs.com/openal/Downloads/Forms/AllItem
       - ofxTextInputField
       - ofxRange
       - ofxTween
-      - ofxAudioDecoder
  - Generate project
- - If you are in Windows VC2015, go to Project Properties -> Configuration Properties -> Build Events -> Post-Build events -> Command Line and paste in the following build event (replace the standard OF command)
-
-            robocopy "$(OF_ROOT)/export/vs/$(Platform_Actual)/" "$(ProjectDir)bin/" "*.dll" /njs /njh /np /fp /bytes
-            robocopy "$(OF_ROOT)/addons/ofxTimeline/libs/openal/export/vs/$(Platform_Actual)/" "$(ProjectDir)bin/" "*.dll" /njs /njh /np /fp /bytes
-            robocopy "$(OF_ROOT)/addons/ofxTimeline/libs/sndfile/export/vs/$(Platform_Actual)/" "$(ProjectDir)bin/" "*.dll" /njs /njh /np /fp /bytes
-            if errorlevel 1 exit 0 else exit %errorlevel%
 
  - If you are on OS X, you'll need to add the OpenAL.framework to your project in order to use the AudioTrack
 
