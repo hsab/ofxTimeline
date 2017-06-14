@@ -78,9 +78,10 @@ apps/*/*/obj
 #VCPP files
 
 
+*.dll
 !dll/Win32/*.dll
 !dll/x64/*.dll
-*.dll
+
 *.lib
 *.exe
 *.sdf
