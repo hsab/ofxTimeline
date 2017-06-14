@@ -93,7 +93,8 @@ ofxTimeline::ofxTimeline()
 	//TODO: should be able to use bitmap font if need be
 	fontPath("GUI/NewMedia Fett.ttf"),
 	fontSize(9),
-	footersHidden(false) {}
+	footersHidden(false),
+	nudgeAmountUseCustom(false) {}
 
 ofxTimeline::~ofxTimeline() {
 	if (isSetup) {
@@ -595,9 +596,9 @@ bool ofxTimeline::togglePlay() {
 		return false;
 	}
 
-	    //if(timeControl != NULL){
-	    //    return timeControl->togglePlay();
-	    //}
+	//if(timeControl != NULL){
+	//    return timeControl->togglePlay();
+	//}
 
 	if (getIsPlaying()) {
 		stop();
@@ -2211,11 +2212,20 @@ long ofxTimeline::getDragTimeOffset() {
 	return dragAnchorSet ? dragMillsecondOffset : 0.;
 }
 
+void ofxTimeline::mapNudgePercent(float total) {
+	nudgeAmountUseCustom = true;
+	nudgeAmountCustom = 1 / total;
+}
+
 ofVec2f ofxTimeline::getNudgePercent() {
+	if (nudgeAmountUseCustom)
+		return ofVec2f(nudgeAmountCustom, .001);
 	return ofVec2f(zoomer->getViewRange().span()*.001, .001);
 }
 
 ofVec2f ofxTimeline::getBigNudgePercent() {
+	if (nudgeAmountUseCustom)
+		return ofVec2f(nudgeAmountCustom, .02);
 	return ofVec2f(zoomer->getViewRange().span()*.02, 0.02);
 }
 

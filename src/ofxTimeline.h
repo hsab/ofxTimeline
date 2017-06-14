@@ -438,6 +438,7 @@ class ofxTimeline : ofThread {
 	
 	vector<ofxTLPage*>& getPages();
     
+	void mapNudgePercent(float total);
 	ofVec2f getNudgePercent();
 	ofVec2f getBigNudgePercent();
 
@@ -451,7 +452,7 @@ class ofxTimeline : ofThread {
 	void setDragTimeOffset(unsigned long long millisecondOffset);
     void cancelSnapping();
 	long getDragTimeOffset();
-    void setHoverTime(unsigned long long millisTime);
+	void setHoverTime(unsigned long long millisTime);
         
     string formatTime(float seconds);
     string formatTime(unsigned long long millis);
@@ -594,4 +595,7 @@ class ofxTimeline : ofThread {
 	
 	bool isFrameBased;
 	float durationInSeconds;
+
+	bool nudgeAmountUseCustom;
+	float nudgeAmountCustom;
 };

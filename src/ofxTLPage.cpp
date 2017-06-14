@@ -446,8 +446,11 @@ void ofxTLPage::selectAll(){
 }
 
 void ofxTLPage::keyPressed(ofKeyEventArgs& args){
-	for(int i = 0; i < headers.size(); i++){
-		tracks[headers[i]->name]->keyPressed(args);
+	//for(int i = 0; i < headers.size(); i++){
+	//	tracks[headers[i]->name]->keyPressed(args);
+	//}
+	if (focusedTrack != NULL) {
+		focusedTrack->keyPressed(args);
 	}
 }
 

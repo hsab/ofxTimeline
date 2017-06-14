@@ -77,7 +77,6 @@ apps/*/*/obj
 
 #VCPP files
 
-*.dll
 *.lib
 *.exe
 *.sdf
