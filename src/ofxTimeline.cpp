@@ -1345,7 +1345,10 @@ void ofxTimeline::keyPressed(ofKeyEventArgs& args) {
 		}
 	}
 	else {
-		if (args.key >= OF_KEY_LEFT && args.key <= OF_KEY_DOWN) {
+		if (args.key == 's' || args.key == 's' - 96) {
+			currentPage->snapToCurrentTime();
+		}
+		else if (args.key >= OF_KEY_LEFT && args.key <= OF_KEY_DOWN) {
 			ofVec2f nudgeAmount = ofGetModifierShiftPressed() ? getBigNudgePercent() : getNudgePercent();
 
 			if (getTotalSelectedItems() == 0) {

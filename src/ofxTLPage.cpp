@@ -460,6 +460,13 @@ void ofxTLPage::nudgeBy(ofVec2f nudgePercent){
 	}
 }
 
+void ofxTLPage::snapToCurrentTime() {
+	for (int i = 0; i < headers.size(); i++) {
+		tracks[headers[i]->name]->snapToCurrentTime();
+	}
+}
+
+
 void ofxTLPage::addTrack(string trackName, ofxTLTrack* track){
 
 	ofxTLTrackHeader* newHeader = new ofxTLTrackHeader();

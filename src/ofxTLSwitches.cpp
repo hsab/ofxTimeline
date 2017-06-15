@@ -455,6 +455,24 @@ void ofxTLSwitches::nudgeBy(ofVec2f nudgePercent){
 	updateTimeRanges();
 }
 
+
+void ofxTLSwitches::snapToCurrentTime() {
+	ofxTLKeyframes::snapToCurrentTime();
+	for (int i = 0; i < keyframes.size(); i++) {
+		ofxTLSwitch* switchKey = (ofxTLSwitch*) keyframes[i];
+		long currSpan = switchKey->timeRange.span();
+		if (switchKey->startSelected) {
+			switchKey->timeRange.min = timeline->getCurrentTimeMillis();
+			switchKey->time = switchKey->timeRange.min;
+		}
+		else if (switchKey->endSelected) {
+			switchKey->timeRange.max = timeline->getCurrentTimeMillis() + currSpan;
+		}
+	}
+
+	updateTimeRanges();
+}
+
 //needed to sync the time ranges from pasted keys
 void ofxTLSwitches::pasteSent(string pasteboard){
 	ofxTLKeyframes::pasteSent(pasteboard);
